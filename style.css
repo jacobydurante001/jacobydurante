@@ -1,0 +1,367 @@
+/* REMOVE SCROLLING */
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    background: radial-gradient(circle at top left, #0b0b0b, #000000 60%);
+    color: white;
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-links {
+    margin-left: auto;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: white;
+    text-shadow: 0 0 10px white;
+}
+
+.github-icon i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.github-icon i:hover {
+    transform: scale(1.2);
+}
+
+/* ---------- MAIN SECTION LAYOUT ---------- */
+main {
+    width: 100%;
+    height: 100%;
+}
+
+/* Page switching */
+.page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ---------- HEADERS ON PAGES ---------- */
+.header h2 {
+    font-size: 55px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* ---------- ABOUT PAGE ---------- */
+#about .about-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+#about .text-content {
+    flex: 1 1 350px;
+    max-width: 600px;
+}
+
+#about p {
+    font-size: 18px;
+    color: #d6d6d6;
+    line-height: 1.6;
+}
+
+#about .image-content {
+    flex: 0 0 250px;
+}
+
+#about .image-content img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.4s;
+    display: block;
+    object-position: center top;
+}
+
+#about .image-content img:hover {
+    transform: scale(1.02);
+}
+
+/* Navigation buttons */
+.nav-buttons {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between; /* default for most pages */
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+/* About page: only Next button on the right */
+#about .nav-buttons {
+    justify-content: flex-end;
+}
+
+.btn-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.btn {
+    padding: 14px 40px;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 35px;
+    font-size: 16px;
+    transition: 0.3s;
+    min-width: 120px;
+    text-align: center;
+}
+
+.btn:hover:not(.btn-disabled) {
+    background: white;
+    color: black;
+}
+
+/* ---------- EDUCATION PAGE ---------- */
+#education {
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.education-boxes {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.black-box {
+    background: rgba(255,255,255,0.03);
+}
+
+.white-box {
+    background: rgba(255,255,255,0.06);
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.school-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+}
+
+/* ---------- ACHIEVEMENTS ---------- */
+#achievements {
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievements-boxes {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.achievement-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.achievement-photo:hover {
+    transform: scale(1.05);
+}
+
+.achievements-boxes .box h3 {
+    font-size: 18px;
+}
+
+.achievements-boxes .box p {
+    font-size: 16px;
+}
+
+/* ---------- FAMILY PAGE ---------- */
+#family {
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.family-boxes {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.family-boxes .box {
+    width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    background: rgba(255,255,255,0.06);
+}
+
+.family-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.family-boxes .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.family-boxes .box h3 {
+    font-size: 20px;
+    color: white;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #cdcdcd;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 1024px) {
+    #about .about-container {
+        justify-content: center;
+        gap: 30px;
+    }
+    #about .header h2,
+    #education .header h2,
+    #achievements .header h2,
+    #family .header h2 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav { padding: 15px 20px; }
+    nav ul { gap: 15px; }
+    .education-boxes, .achievements-boxes, .family-boxes {
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    footer { flex-direction: column; gap: 10px; }
+}
+
+@media screen and (max-width: 480px) {
+    #about .header h2 { font-size: 28px; }
+    #about p { font-size: 14px; }
+    .btn { padding: 12px 30px; font-size: 14px; }
+    nav ul { gap: 10px; }
+}
