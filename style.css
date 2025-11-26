@@ -336,58 +336,117 @@ main {
 }
 
 
-/* ---------------- BATCHMATE PAGE ---------------- */
+/* ---------- BATCHMATE (4-column names, horizontal photo) ---------- */
 
-#batchmate {
-    padding-top: 75px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.batchmate-layout {
+#batchmate .batchmate-layout {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;
-    width: 100%;
-    max-width: 1100px;
-}
-
-.batchmate-photo {
-    width: 50%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.names-columns {
-    display: flex;
-    gap: 25px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.column {
-    text-align: left;
-}
-
-
-/* ---------------- FOOTER ---------------- */
-
-footer {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    color: #cdcdcd;
-
-    display: flex;
-    justify-content: center;
     gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: nowrap; /* keep photo and names side-by-side on wide screens */
 }
+
+/* horizontal rectangle photo (slightly smaller so columns fit) */
+.batchmate-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 12px;
+    object-fit: cover;
+    object-position: center;
+    flex: 0 0 auto;
+}
+
+
+
+/* multi-column names flow */
+.names-columns {
+    /* use CSS multi-column to flow plain text into columns */
+    column-count: 4;        /* -> FOUR columns on wide screens */
+    column-gap: 28px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 28px;
+
+    /* allow the names area to take remaining space */
+    flex: 1 1 0;
+    min-width: 320px;
+    font-size: 16px;
+    line-height: 1.45;
+    color: #d6d6d6;
+    /* keep single-name blocks from breaking awkwardly */
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    padding-top: 6px;
+}
+
+/* ensure each <br> separated name doesn't get a break inside */
+.names-columns br {
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* RESPONSIVE: reduce column count on smaller screens */
+@media (max-width: 1100px) {
+    .names-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+    }
+
+    .batchmate-photo {
+        width: 360px;
+        height: 200px;
+    }
+
+    #batchmate .batchmate-layout {
+        gap: 20px;
+        padding: 16px;
+        flex-wrap: wrap; /* allow wrap if needed */
+    }
+}
+
+@media (max-width: 800px) {
+    .names-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+    }
+
+    .batchmate-photo {
+        width: 320px;
+        height: 180px;
+    }
+
+    /* stack vertically on narrow phones */
+    #batchmate .batchmate-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .names-columns {
+        min-width: 0;
+        text-align: center;
+    }
+
+    .names-columns br {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .names-columns {
+        column-count: 1;
+        -webkit-column-count: 1;
+    }
+
+    .batchmate-photo {
+        width: 95%;
+        height: auto;
+    }
+}
+
+
 
 
 /* ---------------- ANIMATION ---------------- */
