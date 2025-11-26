@@ -1,4 +1,6 @@
-/* REMOVE SCROLLING */
+/* ---------------- GLOBAL SETTINGS ---------------- */
+
+/* Remove scrolling */
 html, body {
     height: 100%;
     overflow: hidden;
@@ -6,19 +8,21 @@ html, body {
     padding: 0;
 }
 
-/* RESET */
+/* Reset */
 * {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-/* BACKGROUND */
+/* Background */
 body {
     background: radial-gradient(circle at top left, #0b0b0b, #000000 60%);
     color: white;
 }
 
-/* ---------- NAVIGATION ---------- */
+
+/* ---------------- NAVIGATION ---------------- */
+
 nav {
     width: 100%;
     padding: 20px 40px;
@@ -29,19 +33,20 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
+
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.nav-links {
-    margin-left: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 nav .logo {
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 2px;
+}
+
+.nav-links {
+    margin-left: auto;
 }
 
 nav ul {
@@ -76,7 +81,9 @@ nav ul li a.active {
     transform: scale(1.2);
 }
 
-/* ---------- MAIN SECTION LAYOUT ---------- */
+
+/* ---------------- MAIN LAYOUT ---------------- */
+
 main {
     width: 100%;
     height: 100%;
@@ -88,6 +95,7 @@ main {
     width: 100%;
     height: 100vh;
     padding-top: 120px;
+
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -98,15 +106,21 @@ main {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-/* ---------- HEADERS ON PAGES ---------- */
-.header h2 {
+
+/* ---------------- UNIVERSAL HEADER SPACING ---------------- */
+
+.page .header h2,
+.batchmate-header {
+    margin-top: 20px;   /* ADJUST THIS */
+    margin-bottom: 25px; /* ADJUST THIS */
     font-size: 55px;
     font-weight: 900;
-    margin-bottom: 40px;
     text-align: center;
 }
 
-/* ---------- ABOUT PAGE ---------- */
+
+/* ---------------- ABOUT PAGE ---------------- */
+
 #about .about-container {
     display: flex;
     gap: 40px;
@@ -137,34 +151,30 @@ main {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 15px;
-    transition: 0.4s;
-    display: block;
     object-position: center top;
+    border-radius: 15px;
+    display: block;
+    transition: 0.4s;
 }
 
 #about .image-content img:hover {
     transform: scale(1.02);
 }
 
+
 /* Navigation buttons */
 .nav-buttons {
     width: 100%;
     max-width: 1100px;
     display: flex;
-    justify-content: space-between; /* default for most pages */
+    justify-content: space-between;
     margin-top: 60px;
     margin-bottom: 40px;
 }
 
-/* About page: only Next button on the right */
+/* About page: only Next button */
 #about .nav-buttons {
     justify-content: flex-end;
-}
-
-.btn-disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
 }
 
 .btn {
@@ -185,7 +195,14 @@ main {
     color: black;
 }
 
-/* ---------- EDUCATION PAGE ---------- */
+.btn-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* ---------------- EDUCATION PAGE ---------------- */
+
 #education {
     padding: 0 20px;
     flex-direction: column;
@@ -232,7 +249,9 @@ main {
     border-radius: 10px;
 }
 
-/* ---------- ACHIEVEMENTS ---------- */
+
+/* ---------------- ACHIEVEMENTS ---------------- */
+
 #achievements {
     padding: 0 20px;
     flex-direction: column;
@@ -269,9 +288,11 @@ main {
     font-size: 16px;
 }
 
-/* ---------- FAMILY PAGE ---------- */
+
+/* ---------------- FAMILY PAGE ---------------- */
+
 #family {
-    padding: 0 20px;
+    padding: 80px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -291,8 +312,8 @@ main {
     border-radius: 20px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
     background: rgba(255,255,255,0.06);
+    transition: 0.3s;
 }
 
 .family-photo {
@@ -314,7 +335,47 @@ main {
     color: white;
 }
 
-/* ---------- FOOTER ---------- */
+
+/* ---------------- BATCHMATE PAGE ---------------- */
+
+#batchmate {
+    padding-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.batchmate-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.batchmate-photo {
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.names-columns {
+    display: flex;
+    gap: 25px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.column {
+    text-align: left;
+}
+
+
+/* ---------------- FOOTER ---------------- */
+
 footer {
     position: fixed;
     bottom: 20px;
@@ -322,46 +383,43 @@ footer {
     text-align: center;
     font-size: 14px;
     color: #cdcdcd;
+
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-/* ---------- ANIMATIONS ---------- */
+
+/* ---------------- ANIMATION ---------------- */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media screen and (max-width: 1024px) {
-    #about .about-container {
-        justify-content: center;
-        gap: 30px;
-    }
-    #about .header h2,
-    #education .header h2,
-    #achievements .header h2,
-    #family .header h2 {
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1024px) {
+    .header h2 {
         font-size: 45px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    nav { padding: 15px 20px; }
-    nav ul { gap: 15px; }
-    .education-boxes, .achievements-boxes, .family-boxes {
-        flex-direction: row;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+@media (max-width: 768px) {
+    .batchmate-layout {
+        flex-direction: column;
+        align-items: center;
     }
-    footer { flex-direction: column; gap: 10px; }
+
+    .batchmate-photo {
+        width: 80%;
+    }
 }
 
-@media screen and (max-width: 480px) {
-    #about .header h2 { font-size: 28px; }
-    #about p { font-size: 14px; }
-    .btn { padding: 12px 30px; font-size: 14px; }
-    nav ul { gap: 10px; }
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 28px;
+    }
 }
+
