@@ -380,7 +380,7 @@ main {
 }
 
 .batchmate-photo {
-    width: 350px;
+    width: 460px;
     height: 350px;
     border-radius: 12px;
     object-fit: cover;
@@ -407,7 +407,7 @@ main {
 
 .names-columns br {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 1100px) {
