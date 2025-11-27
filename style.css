@@ -111,8 +111,8 @@ main {
 
 .page .header h2,
 .batchmate-header {
-    margin-top: 20px;   /* ADJUST THIS */
-    margin-bottom: 25px; /* ADJUST THIS */
+    margin-top: 20px;
+    margin-bottom: 25px;
     font-size: 55px;
     font-weight: 900;
     text-align: center;
@@ -162,19 +162,33 @@ main {
 }
 
 
-/* Navigation buttons */
+/* ---------------- NAVIGATION BUTTONS (GLOBAL + FIXED) ---------------- */
+
 .nav-buttons {
     width: 100%;
     max-width: 1100px;
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+/* Only "Next" on About page */
+#about .nav-buttons {
+    justify-content: flex-end;
+}
+
+/* FAMILY PAGE button spacing */
+#family .nav-buttons {
+    margin-top: 30px;
     margin-bottom: 40px;
 }
 
-/* About page: only Next button */
-#about .nav-buttons {
-    justify-content: flex-end;
+/* BATCHMATE PAGE button spacing */
+#batchmate .nav-buttons {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .btn {
@@ -292,51 +306,66 @@ main {
 /* ---------------- FAMILY PAGE ---------------- */
 
 #family {
-    padding: 80px;
+    padding: 120px 100px 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+#family .header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#family .header h2 {
+    font-size: 55px;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 3px;
+    color: white;
+}
+
 .family-boxes {
     display: flex;
-    gap: 35px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .family-boxes .box {
-    width: 280px;
-    padding: 30px;
+    width: 250px;
+    padding: 25px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.12);
     background: rgba(255,255,255,0.06);
     transition: 0.3s;
 }
 
 .family-photo {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 14px;
     margin-bottom: 15px;
     transition: 0.3s;
 }
 
 .family-boxes .box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    box-shadow: 0 0 22px rgba(255,255,255,0.18);
 }
 
 .family-boxes .box h3 {
     font-size: 20px;
+    font-weight: 700;
     color: white;
+    margin-bottom: 8px;
 }
 
 
-/* ---------- BATCHMATE (4-column names, horizontal photo) ---------- */
+/* ---------------- BATCHMATE PAGE ---------------- */
 
 #batchmate .batchmate-layout {
     display: flex;
@@ -347,10 +376,9 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    flex-wrap: nowrap; /* keep photo and names side-by-side on wide screens */
+    flex-wrap: nowrap;
 }
 
-/* horizontal rectangle photo (slightly smaller so columns fit) */
 .batchmate-photo {
     width: 350px;
     height: 350px;
@@ -360,35 +388,28 @@ main {
     flex: 0 0 auto;
 }
 
-
-
-/* multi-column names flow */
 .names-columns {
-    /* use CSS multi-column to flow plain text into columns */
-    column-count: 4;        /* -> FOUR columns on wide screens */
+    column-count: 4;
     column-gap: 28px;
     -webkit-column-count: 4;
     -webkit-column-gap: 28px;
 
-    /* allow the names area to take remaining space */
     flex: 1 1 0;
     min-width: 320px;
     font-size: 16px;
     line-height: 1.45;
     color: #d6d6d6;
-    /* keep single-name blocks from breaking awkwardly */
+
     break-inside: avoid-column;
     -webkit-column-break-inside: avoid;
     padding-top: 6px;
 }
 
-/* ensure each <br> separated name doesn't get a break inside */
 .names-columns br {
     display: block;
     margin-bottom: 6px;
 }
 
-/* RESPONSIVE: reduce column count on smaller screens */
 @media (max-width: 1100px) {
     .names-columns {
         column-count: 3;
@@ -403,7 +424,7 @@ main {
     #batchmate .batchmate-layout {
         gap: 20px;
         padding: 16px;
-        flex-wrap: wrap; /* allow wrap if needed */
+        flex-wrap: wrap;
     }
 }
 
@@ -418,7 +439,6 @@ main {
         height: 180px;
     }
 
-    /* stack vertically on narrow phones */
     #batchmate .batchmate-layout {
         flex-direction: column;
         align-items: center;
@@ -445,8 +465,6 @@ main {
         height: auto;
     }
 }
-
-
 
 
 /* ---------------- ANIMATION ---------------- */
@@ -481,4 +499,3 @@ main {
         font-size: 28px;
     }
 }
-
