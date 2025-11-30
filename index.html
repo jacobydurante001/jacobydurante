@@ -7,274 +7,274 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">Jacob Durante</div>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo" id="logo">Jacob Durante</div>
+    <div class="nav-toggle" id="navToggle">&#9776;</div>
 
-        <ul class="nav-links">
-            <li><a id="nav-about" onclick="showPage('about')" class="active">About Me</a></li>
-            <li><a id="nav-education" onclick="showPage('education')">Education Attainment</a></li>
-            <li><a id="nav-achievements" onclick="showPage('achievements')">Achievements</a></li>
-            <li><a id="nav-family" onclick="showPage('family')">My Family</a></li>
-            <li><a id="nav-batchmate" onclick="showPage('batchmate')">My Batchmate</a></li>
-        </ul>
+    <ul class="nav-links" id="navLinks">
+        <li><a id="nav-about" class="active" data-page="about">About Me</a></li>
+        <li><a id="nav-education" data-page="education">Educational Attainment</a></li>
+        <li><a id="nav-achievements" data-page="achievements">Achievements</a></li>
+        <li><a id="nav-family" data-page="family">My Family</a></li>
+        <li><a id="nav-batchmate" data-page="batchmate">My Batchmates</a></li>
+    </ul>
 
-        <a href="https://github.com/" target="_blank" class="github-icon">
-            <i class="fab fa-github"></i>
-        </a>
-    </nav>
+    <a href="https://github.com/" target="_blank" class="github-icon">
+        <i class="fab fa-github"></i>
+    </a>
+</nav>
 
-    <main>
+<main>
 
-        <!-- ABOUT PAGE -->
-        <section id="about" class="page active">
-            <div class="header">
-                <h2>ABOUT ME</h2>
+    <!-- ABOUT PAGE -->
+    <section id="about" class="page active">
+        <div class="header"><h2>ABOUT ME</h2></div>
+
+        <div class="about-container">
+            <div class="text-content">
+                <p>
+                    Hi! I'm Jacob Durante, a first-year IT student who has experience in Arduino prototyping
+                    and coding. I enjoy creating projects that combine hardware and software to solve real-world
+                    problems and improve my technical skills. I am always eager to learn new programming languages
+                    and technologies. In my free time, I like to experiment with electronics and build small
+                    robotic projects.
+                </p>
             </div>
 
-            <div class="about-container">
-                <div class="text-content">
-                    <p>
-                        Hi! I'm Jacob Durante, a first-year IT student who has experience in Arduino prototyping
-                        and coding. I enjoy creating projects that combine hardware and software to solve real-world
-                        problems and improve my technical skills. I am always eager to learn new programming languages
-                        and technologies. In my free time, I like to experiment with electronics and build small
-                        robotic projects.
-                    </p>
-                </div>
-
-                <div class="image-content">
-                    <img src="me.JPG" alt="My Photo" />
-                </div>
-            </div>
-
-            <div class="nav-buttons">
-                <button class="btn about-next" onclick="showPage('education')">Next →</button>
-            </div>
-        </section>
-
-        <!-- EDUCATION PAGE -->
-        <section id="education" class="page">
-            <div class="header">
-                <h2>EDUCATION ATTAINMENT</h2>
-            </div>
-
-            <div class="education-boxes">
-
-                <div class="box black-box">
-                    <img src="rnhs.jpg" class="school-logo" alt="Roxas National School Logo" />
-                    <h3>Elementary</h3>
-                    <p>
-                        Roxas National School <br />
-                        With Honors <br />
-                        3× Top 1 in Essay Writing <br />
-                        2013–2019
-                    </p>
-                </div>
-
-                <div class="box black-box">
-                    <img src="rnhs.jpg" class="school-logo" alt="Roxas National School Logo" />
-                    <h3>Highschool</h3>
-                    <p>
-                        Roxas National School <br />
-                        With Honors <br />
-                        3× Top 1 in Essay Writing <br />
-                        2019–2023
-                    </p>
-                </div>
-
-                <div class="box white-box">
-                    <img src="UC.png" class="school-logo" alt="University of the Cordilleras Logo" />
-                    <h3>Senior Highschool</h3>
-                    <p>
-                        University of the Cordilleras <br />
-                        With Honors <br />
-                        2023–2025
-                    </p>
-                </div>
-
-                <div class="box white-box">
-                    <img src="UC.png" class="school-logo" alt="University of the Cordilleras Logo" />
-                    <h3>College</h3>
-                    <p>
-                        Bachelor of Science in Information Technology (In progress) <br />
-                        University of the Cordilleras
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="nav-buttons">
-                <button class="btn" onclick="showPage('about')">← Previous</button>
-                <button class="btn" onclick="showPage('achievements')">Next →</button>
-            </div>
-        </section>
-
-        <!-- ACHIEVEMENTS PAGE -->
-        <section id="achievements" class="page">
-            <div class="header">
-                <h2>ACHIEVEMENTS</h2>
-            </div>
-
-            <div class="achievements-boxes">
-
-                <div class="box white-box">
-                    <img src="writing.png" alt="Highschool Achievement" class="achievement-photo" />
-                    <h3>High School</h3>
-                    <p>
-                        Graduated <strong>With Honors</strong> <br />
-                        <strong>Top 1 in Essay Writing</strong> (3×)
-                    </p>
-                </div>
-
-                <div class="box white-box">
-                    <img src="Uno.png" alt="Senior High Achievement" class="achievement-photo" />
-                    <h3>Senior High School</h3>
-                    <p>
-                        Graduated <strong>With Honors</strong> <br />
-                        <strong>Arduino Prototyping – Defense Phase:</strong> Ranked Top 5
-                    </p>
-                </div>
-
-                <div class="box white-box">
-                    <img src="Dos.png" alt="Senior High Achievement" class="achievement-photo" />
-                    <h3>Senior High School</h3>
-                    <p>
-                        <strong>Arduino Prototyping – Finals:</strong> Ranked Top 3 <br />
-                        <em>(C++ programming for robots)</em> <br />
-                        Graduated <strong>With Honors</strong>
-                    </p>
-                </div>
-
-                <div class="box white-box">
-                    <h3>Certifications</h3>
-                    <p>
-                        Completed <strong>Red Cross Training</strong> (2×) <br />
-                        Earned <strong>Certificate & First Aid License</strong> <br /><br />
-                        Received <strong>Certificate of Recognition</strong> for
-                        <em>Prototyping in Real-World Applications</em>
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="nav-buttons">
-                <button class="btn" onclick="showPage('education')">← Previous</button>
-                <button class="btn" onclick="showPage('family')">Next →</button>
-            </div>
-        </section>
-
-<!-- FAMILY PAGE -->
-<section id="family" class="page">
-    <div class="header">
-        <h2>MY FAMILY</h2>
-    </div>
-
-    <div class="family-boxes">
-        <div class="box">
-            <img src="father.jpg" alt="Father" class="family-photo" />
-            <h3>Father</h3>
-            <p>A strong and steady guide—supportive, hardworking, and always there when it matters.</p>
-        </div>
-
-        <div class="box">
-            <img src="mother.jpg" alt="Mother" class="family-photo" />
-            <h3>Mother</h3>
-            <p>The heart of our home—caring, patient, and endlessly loving in everything she does.</p>
-        </div>
-
-        <div class="box">
-            <img src="siblings.jpg" alt="Siblings" class="family-photo" />
-            <h3>Siblings</h3>
-            <p>My built-in best friend(s)—fun, dependable, and always ready to share laughter or lend a hand.</p>
-        </div>
-    </div>
-
-    <div class="nav-buttons">
-        <button class="btn" onclick="showPage('achievements')">← Previous</button>
-        <button class="btn" onclick="showPage('batchmate')">Next →</button>
-    </div>
-</section>
-
-
- <!-- BATCHMATE PAGE -->
-<section id="batchmate" class="page">
-    <div class="header">
-        <h2>MY BATCHMATES</h2>
-    </div>
-
-    <div class="batchmate-layout">
-        <img src="batchmate.jpg" class="batchmate-photo" alt="Batchmates">
-
-        <div class="names-columns">
-            <div class="column">
-                1. Abdulkader, Faisal<br>
-                2. Aben, Zeius<br>
-                3. Abuan, Cris Julian<br>
-                4. Agaled, Edezie<br>
-                5. Alay-ay, Paul Rayver<br>
-                6. Alcuizar, Justin<br>
-                7. Anaydos, Chezen<br>
-                8. Antonio, Blast<br>
-                9. Antonio, Hart<br>
-                10. Aspilan, Jochrisse<br>
-                11. Bayawa, Sarrick<br>
-                12. Bugnosen, Jemimah
-            </div>
-            <div class="column">
-                13. Calimquim, Marianne<br>
-                14. Donato, Tom Iric<br>
-                15. Durante, Jacob<br>
-                16. Fajardo, Kathryn<br>
-                17. Fajardo, Kathryz<br>
-                18. Flores, Angelyn<br>
-                19. Gapasin, Ken Cade<br>
-                20. Gonzales<br>
-                21. Gualdo, Rojan<br>
-                22. Guerrero, Dewey<br>
-                23. Keryao, Grace<br>
-                24. Lorilla, Ronald
-            </div>
-            <div class="column">
-                25. Lozano, Kyro<br>
-                26. Mahilum, Dhellmar<br>
-                27. Mendoza, Justine<br>
-                28. Napenas, Lea<br>
-                29. Obongen, Gian Carlo<br>
-                30. Pagnas, Xhiro<br>
-                31. Patiag, Jared<br>
-                32. Pocling, Tricia<br>
-                33. Ramos, Reign<br>
-                34. Rodriguez, Harvey<br>
-                35. Rodrigues, Sean<br>
-                36. Santos, Kent<br>
-                37. Sevilla, Ronnel<br>
-                38. Silin, Clark Jonathan<br>
-                39. Ugaddan, Shaquil<br>
-                40. Vicente, Edison
+            <div class="image-content">
+                <img src="me.JPG" alt="My Photo" />
             </div>
         </div>
-    </div>
 
-    <div class="nav-buttons">
-        <button class="btn" onclick="showPage('family')">← Previous</button>
-    </div>
-</section>
-
-
-    </main>
-
-    <footer>
-        <div class="contact-info">
-            <p>Email: jacobdurante001@gmail.com</p>
-            <p>Phone No. 09486836249</p>
+        <div class="nav-buttons">
+            <button class="btn next-btn">Next →</button>
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- EDUCATION PAGE -->
+    <section id="education" class="page">
+        <div class="header"><h2>EDUCATIONAL ATTAINMENT</h2></div>
+
+        <div class="education-boxes">
+
+            <div class="box black-box">
+                <img src="rnhs.jpg" class="school-logo" alt="Roxas National School" />
+                <h3>Elementary</h3>
+                <p>
+                    Roxas National School<br>
+                    With Honors<br>
+                    3× Top 1 in Essay Writing<br>
+                    2013–2019
+                </p>
+            </div>
+
+            <div class="box black-box">
+                <img src="rnhs.jpg" class="school-logo" alt="Roxas National School" />
+                <h3>Highschool</h3>
+                <p>
+                    Roxas National School<br>
+                    With Honors<br>
+                    3× Top 1 in Essay Writing<br>
+                    2019–2023
+                </p>
+            </div>
+
+            <div class="box white-box">
+                <img src="UC.png" class="school-logo" alt="UC Logo" />
+                <h3>Senior Highschool</h3>
+                <p>
+                    University of the Cordilleras<br>
+                    With Honors<br>
+                    2023–2025
+                </p>
+            </div>
+
+            <div class="box white-box">
+                <img src="UC.png" class="school-logo" alt="UC Logo" />
+                <h3>College</h3>
+                <p>
+                    Bachelor of Science in Information Technology (In progress)<br>
+                    University of the Cordilleras
+                </p>
+            </div>
+
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn prev-btn">← Previous</button>
+            <button class="btn next-btn">Next →</button>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS PAGE -->
+    <section id="achievements" class="page">
+        <div class="header"><h2>ACHIEVEMENTS</h2></div>
+
+        <div class="achievements-boxes">
+
+            <div class="box white-box">
+                <img src="writing.png" class="achievement-photo" />
+                <h3>High School</h3>
+                <p>
+                    Graduated <strong>With Honors</strong><br>
+                    <strong>Top 1 in Essay Writing</strong> (3×)
+                </p>
+            </div>
+
+            <div class="box white-box">
+                <img src="Uno.png" class="achievement-photo" />
+                <h3>Senior High School</h3>
+                <p>
+                    Graduated <strong>With Honors</strong><br>
+                    <strong>Arduino Prototyping – Defense Phase:</strong> Top 5
+                </p>
+            </div>
+
+            <div class="box white-box">
+                <img src="Dos.png" class="achievement-photo" />
+                <h3>Senior High School</h3>
+                <p>
+                    <strong>Arduino Prototyping – Finals:</strong> Top 3<br>
+                    <em>(C++ programming for robots)</em><br>
+                    Graduated <strong>With Honors</strong>
+                </p>
+            </div>
+
+            <div class="box white-box">
+                <h3>Certifications</h3>
+                <p>
+                    Completed <strong>Red Cross Training</strong> (2×)<br>
+                    Certificate & First Aid License<br>
+                    Certificate of Recognition for <em>Prototyping in Real-World Applications</em>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn prev-btn">← Previous</button>
+            <button class="btn next-btn">Next →</button>
+        </div>
+    </section>
+
+    <!-- FAMILY PAGE -->
+    <section id="family" class="page">
+        <div class="header"><h2>MY FAMILY</h2></div>
+
+        <div class="family-boxes">
+            <div class="box">
+                <img src="father.jpg" alt="Father" class="family-photo" />
+                <h3>Father - Jimmy</h3>
+                <p>A strong and steady guide, supportive, hardworking, and always there when it matters.</p>
+            </div>
+
+            <div class="box">
+                <img src="mother.jpg" alt="Mother" class="family-photo" />
+                <h3>Mother - Jocelyn</h3>
+                <p>A warm and caring soul, loving, understanding, and the heart that keeps us together.</p>
+            </div>
+
+            <div class="box">
+                <img src="siblings.jpg" alt="Siblings" class="family-photo" />
+                <h3>Siblings - Shannen and Chanz</h3>
+                <p>A constant source of joy, fun, supportive, and always lifting me up when I need it.</p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn prev-btn">← Previous</button>
+            <button class="btn next-btn">Next →</button>
+        </div>
+    </section>
+
+    <!-- BATCHMATE PAGE -->
+    <section id="batchmate" class="page">
+        <div class="header"><h2>MY BATCHMATES</h2></div>
+
+        <div class="batchmate-layout">
+            <img src="batchmate.jpg" class="batchmate-photo">
+
+            <div class="names-columns">
+
+                <!-- COLUMN 1 -->
+                <div class="column">
+                    <div class="name-box">1. Abdulkader, Faisal</div>
+                    <div class="name-box">2. Aben, Zeius</div>
+                    <div class="name-box">3. Abuan, Cris Julian</div>
+                    <div class="name-box">4. Agaled, Edezie</div>
+                    <div class="name-box">5. Alay-ay, Paul Rayver</div>
+                    <div class="name-box">6. Alcuizar, Justin</div>
+                    <div class="name-box">7. Anaydos, Chezen</div>
+                    <div class="name-box">8. Antonio, Blast</div>
+                    <div class="name-box">9. Antonio, Hart</div>
+                    <div class="name-box">10. Aspilan, Jochrisse</div>
+                    <div class="name-box">11. Bayawa, Sarrick</div>
+                    <div class="name-box">12. Bugnosen, Jemimah</div>
+                </div>
+
+                <!-- COLUMN 2 -->
+                <div class="column">
+                    <div class="name-box">13. Calimquim, Marianne</div>
+                    <div class="name-box">14. Donato, Tom Iric</div>
+                    <div class="name-box">15. Durante, Jacob</div>
+                    <div class="name-box">16. Fajardo, Kathryn</div>
+                    <div class="name-box">17. Fajardo, Kathryz</div>
+                    <div class="name-box">18. Flores, Angelyn</div>
+                    <div class="name-box">19. Gapasin, Ken Cade</div>
+                    <div class="name-box">20. Gonzales</div>
+                    <div class="name-box">21. Gualdo, Rojan</div>
+                    <div class="name-box">22. Guerrero, Dewey</div>
+                    <div class="name-box">23. Keryao, Grace</div>
+                    <div class="name-box">24. Lorilla, Ronald</div>
+                </div>
+
+                <!-- COLUMN 3 -->
+                <div class="column">
+                    <div class="name-box">25. Lozano, Kyro</div>
+                    <div class="name-box">26. Mahilum, Dhellmar</div>
+                    <div class="name-box">27. Mendoza, Justine</div>
+                    <div class="name-box">28. Napenas, Lea</div>
+                    <div class="name-box">29. Obongen, Gian Carlo</div>
+                    <div class="name-box">30. Pagnas, Xhiro</div>
+                    <div class="name-box">31. Patiag, Jared</div>
+                    <div class="name-box">32. Pocling, Tricia</div>
+                    <div class="name-box">33. Ramos, Reign</div>
+                    <div class="name-box">34. Rodriguez, Harvey</div>
+                    <div class="name-box">35. Rodrigues, Sean</div>
+                    <div class="name-box">36. Santos, Kent</div>
+                    <div class="name-box">37. Sevilla, Ronnel</div>
+                    <div class="name-box">38. Silin, Clark Jonathan</div>
+                    <div class="name-box">39. Ugaddan, Shaquil</div>
+                    <div class="name-box">40. Vicente, Edison</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn prev-btn">← Previous</button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="contact-info">
+        <p>Email: jacobdurante001@gmail.com</p>
+        <p>Phone No. 09486836249</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    document.getElementById('logo').addEventListener('click', () => {
+        showPage('about');
+    });
+</script>
 
 </body>
 </html>

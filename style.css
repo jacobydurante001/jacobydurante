@@ -20,7 +20,6 @@ body {
     color: white;
 }
 
-
 /* ---------------- NAVIGATION ---------------- */
 
 nav {
@@ -81,7 +80,6 @@ nav ul li a.active {
     transform: scale(1.2);
 }
 
-
 /* ---------------- MAIN LAYOUT ---------------- */
 
 main {
@@ -106,7 +104,6 @@ main {
     animation: fadeIn 0.4s ease-in-out;
 }
 
-
 /* ---------------- UNIVERSAL HEADER SPACING ---------------- */
 
 .page .header h2,
@@ -117,7 +114,6 @@ main {
     font-weight: 900;
     text-align: center;
 }
-
 
 /* ---------------- ABOUT PAGE ---------------- */
 
@@ -161,34 +157,18 @@ main {
     transform: scale(1.02);
 }
 
-
 /* ---------------- NAVIGATION BUTTONS (GLOBAL + FIXED) ---------------- */
 
 .nav-buttons {
     width: 100%;
     max-width: 1100px;
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    margin-bottom: 50px;
+    justify-content: flex-end; /* buttons aligned right for all pages */
+    position: fixed;
+    bottom: 30px;
     padding: 0 20px;
-}
-
-/* Only "Next" on About page */
-#about .nav-buttons {
-    justify-content: flex-end;
-}
-
-/* FAMILY PAGE button spacing */
-#family .nav-buttons {
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-/* BATCHMATE PAGE button spacing */
-#batchmate .nav-buttons {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    gap: 20px;
+    z-index: 500;
 }
 
 .btn {
@@ -214,7 +194,6 @@ main {
     cursor: not-allowed;
 }
 
-
 /* ---------------- EDUCATION PAGE ---------------- */
 
 #education {
@@ -239,13 +218,10 @@ main {
     text-align: left;
     border: 1px solid rgba(255,255,255,0.1);
     transition: 0.3s;
-}
-
-.black-box {
     background: rgba(255,255,255,0.03);
 }
 
-.white-box {
+.box.white-box {
     background: rgba(255,255,255,0.06);
 }
 
@@ -262,7 +238,6 @@ main {
     margin: 0 auto 15px;
     border-radius: 10px;
 }
-
 
 /* ---------------- ACHIEVEMENTS ---------------- */
 
@@ -302,66 +277,51 @@ main {
     font-size: 16px;
 }
 
-
 /* ---------------- FAMILY PAGE ---------------- */
-
-#family {
-    padding: 120px 100px 40px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#family .header {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#family .header h2 {
-    font-size: 55px;
-    font-weight: 900;
-    margin: 0;
-    letter-spacing: 3px;
-    color: white;
-}
-
 .family-boxes {
     display: flex;
-    gap: 30px;
+    gap: 35px;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 50px;
 }
 
 .family-boxes .box {
-    width: 250px;
-    padding: 25px;
+    width: 280px;                  /* same as education/achievement boxes */
+    padding: 30px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.1);
     background: rgba(255,255,255,0.06);
-    transition: 0.3s;
-}
-
-.family-photo {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 15px;
     transition: 0.3s;
 }
 
 .family-boxes .box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 22px rgba(255,255,255,0.18);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 
 .family-boxes .box h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: white;
     margin-bottom: 8px;
+}
+
+.family-boxes .box p {
+    font-size: 16px;
+    color: #d6d6d6;  /* matches other page text */
+    line-height: 1.5;
+}
+
+/* Family photos */
+.family-photo {
+    width: 100%;
+    height: 180px;              /* slightly taller for better look */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
 
@@ -410,63 +370,6 @@ main {
     margin-bottom: 10px;
 }
 
-@media (max-width: 1100px) {
-    .names-columns {
-        column-count: 3;
-        -webkit-column-count: 3;
-    }
-
-    .batchmate-photo {
-        width: 360px;
-        height: 200px;
-    }
-
-    #batchmate .batchmate-layout {
-        gap: 20px;
-        padding: 16px;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 800px) {
-    .names-columns {
-        column-count: 2;
-        -webkit-column-count: 2;
-    }
-
-    .batchmate-photo {
-        width: 320px;
-        height: 180px;
-    }
-
-    #batchmate .batchmate-layout {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .names-columns {
-        min-width: 0;
-        text-align: center;
-    }
-
-    .names-columns br {
-        margin-bottom: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .names-columns {
-        column-count: 1;
-        -webkit-column-count: 1;
-    }
-
-    .batchmate-photo {
-        width: 95%;
-        height: auto;
-    }
-}
-
-
 /* ---------------- ANIMATION ---------------- */
 
 @keyframes fadeIn {
@@ -474,28 +377,33 @@ main {
     to { opacity: 1; }
 }
 
-
 /* ---------------- RESPONSIVE ---------------- */
 
-@media (max-width: 1024px) {
-    .header h2 {
-        font-size: 45px;
-    }
+@media (max-width: 1100px) {
+    .names-columns { column-count: 3; -webkit-column-count: 3; }
+    .batchmate-photo { width: 360px; height: 200px; }
+    #batchmate .batchmate-layout { gap: 20px; padding: 16px; flex-wrap: wrap; }
 }
 
-@media (max-width: 768px) {
-    .batchmate-layout {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .batchmate-photo {
-        width: 80%;
-    }
+@media (max-width: 800px) {
+    .names-columns { column-count: 2; -webkit-column-count: 2; }
+    .batchmate-photo { width: 320px; height: 180px; }
+    #batchmate .batchmate-layout { flex-direction: column; align-items: center; }
+    .names-columns { min-width: 0; text-align: center; }
+    .names-columns br { margin-bottom: 8px; }
 }
 
 @media (max-width: 480px) {
-    .header h2 {
-        font-size: 28px;
-    }
+    .names-columns { column-count: 1; -webkit-column-count: 1; }
+    .batchmate-photo { width: 95%; height: auto; }
+    .header h2 { font-size: 28px; }
+}
+
+@media (max-width: 768px) {
+    .batchmate-layout { flex-direction: column; align-items: center; }
+    .batchmate-photo { width: 80%; }
+}
+
+@media (max-width: 1024px) {
+    .header h2 { font-size: 45px; }
 }
