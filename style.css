@@ -398,7 +398,7 @@ main {
     width: 100%;
     padding: 0px 20px;
     border-radius: 12px;
-    border-left: 5px solid var(--accent-color, #4154f1);
+    border-left: 5px solid var(--accent-color, #83838b);
     box-sizing: border-box;
 }
 
@@ -423,7 +423,7 @@ main {
 
 /* Hover effect */
 .names-list-grid li:hover {
-    color: #4a8ad4;
+    color: #848c96;
     font-weight: 500;
     transition: 0.2s;
 }
